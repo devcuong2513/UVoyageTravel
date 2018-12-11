@@ -1,0 +1,23 @@
+﻿@using UvoyageTravel.Models.Entity;
+@model List<Account>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<ul>
+    @foreach (Account acc in Model)
+    {
+        <li>
+            @acc.username - Pass : @acc.password
+            <ul>
+                @foreach (string role in acc.Roles)
+                {
+                    <li>@role</li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
